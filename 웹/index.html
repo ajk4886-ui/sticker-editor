@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>M3m3tick3r</title>
+
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #ffffff;
+      margin: 0;
+    }
+
+    /* 로고 텍스트 클릭 시 메인페이지 이동 */
+    .logo {
+      font-size: 48px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 40px;
+      text-decoration: none;
+      color: black;
+    }
+
+    /* 버튼 스타일 */
+    .custom-btn {
+      padding: 20px 60px;
+      font-size: 32px;
+      border-radius: 20px;
+      border: 6px solid black;
+      background: white;
+      cursor: pointer;
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      display: inline-block;
+
+      /* 기본 그림자 */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+      /* 부드러운 애니메이션 */
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    /* 호버 효과 */
+    .custom-btn:hover {
+      box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 클릭 시 메인 페이지 이동 -->
+  <a href="index.html" class="logo">M3m3tick3r</a>
+
+  <!-- 클릭 시 다음 페이지로 이동 -->
+  <a href="next2.html" class="custom-btn">Create your M3m3</a>
+
+</body>
+</html>
+

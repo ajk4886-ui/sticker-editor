@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Sticker Items</title>
+
+<style>
+    body{
+        background:#fff;
+        font-family:Arial, sans-serif;
+        padding:40px;
+        display:flex;
+        gap:30px;
+        flex-wrap:wrap;
+    }
+
+    .sticker{
+        width:200px;
+        padding:15px;
+        border-radius:20px;
+        background:white;
+        box-shadow:0 0 15px rgba(255,0,255,0.4);
+        text-align:center;
+        cursor:pointer;
+        transition:transform 0.15s ease;
+        user-select:none;
+        position:relative;
+    }
+
+    .sticker:hover{
+        transform:scale(1.05);
+    }
+
+    .sticker img{
+        width:100%;
+        border-radius:15px;
+    }
+
+    /* 드래그 가능 */
+    .draggable{
+        position:absolute;
+    }
+</style>
+
+<script>
+// 드래그 기능
+document.addEventListener("DOMContentLoaded", () => {
+    const stickers = document.querySelectorAll(".sticker");
+
+    stickers.forEach(sticker => {
+        let offsetX, offsetY;
+
+        sticker.addEventListener("mousedown", (e) => {
+            sticker.style.position = "absolute";
+            sticker.style.zIndex = 9999;
+
+            offsetX = e.clientX - sticker.offsetLeft;
+            offsetY = e.clientY - sticker.offsetTop;
+
+            document.onmousemove = (e2) => {
+                sticker.style.left = (e2.clientX - offsetX) + "px";
+                sticker.style.top = (e2.clientY - offsetY) + "px";
+            };
+
+            document.onmouseup = () => {
+                document.onmousemove = null;
+            };
+        });
+    });
+});
+</script>
+
+</head>
+
+<body>
+
+<!-- 스티커 1: 벽돌 -->
+<a class="sticker" href="brick.png" download>
+    <img src="brick.png">
+    <p>벽돌 스티커</p>
+</a>
+
+<!-- 스티커 2: 사람1 -->
+<a class="sticker" href="guy1.png" download>
+    <img src="guy1.png">
+    <p>인물 스티커 1</p>
+</a>
+
+<!-- 스티커 3: 사람2 -->
+<a class="sticker" href="guy2.png" download>
+    <img src="guy2.png">
+    <p>인물 스티커 2</p>
+</a>
+
+<!-- 스티커 4: 텍스트 -->
+<a class="sticker" href="text.png" download>
+    <img src="text.png">
+    <p>문구 스티커</p>
+</a>
+
+</body>
+</html>
